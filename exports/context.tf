@@ -21,8 +21,7 @@
 #
 
 module "this" {
-  source  = "https://github.com/deshe-analytics/terraform-null-label.git"
-  version = "0.25.0" # requires Terraform >= 0.13.0
+  source  = "git::https://github.com/deshe-analytics/terraform-null-label.git"
 
   enabled             = var.enabled
   namespace           = var.namespace
