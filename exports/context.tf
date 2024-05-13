@@ -21,7 +21,7 @@
 #
 
 module "this" {
-  source  = "cloudposse/label/null"
+  source  = "https://github.com/deshe-analytics/terraform-null-label.git"
   version = "0.25.0" # requires Terraform >= 0.13.0
 
   enabled             = var.enabled
@@ -41,7 +41,7 @@ module "this" {
   label_value_case    = var.label_value_case
   descriptor_formats  = var.descriptor_formats
   labels_as_tags      = var.labels_as_tags
-
+  execution_class = var.execution_class
   context = var.context
 }
 
@@ -275,5 +275,13 @@ variable "descriptor_formats" {
     Default is `{}` (`descriptors` output will be empty).
     EOT
 }
+variable "execution_class" {
+  type        = string
+  default     = null
+  description = <<-EOT
+Defines jobs execution type
+    EOT
+}
+
 
 #### End of copy of cloudposse/terraform-null-label/variables.tf

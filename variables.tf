@@ -17,6 +17,7 @@ variable "context" {
     label_key_case      = null
     label_value_case    = null
     descriptor_formats  = {}
+    execution_class = null
     # Note: we have to use [] instead of null for unset lists due to
     # https://github.com/hashicorp/terraform/issues/28137
     # which was not fixed until Terraform 1.0.0,
@@ -224,5 +225,13 @@ variable "descriptor_formats" {
     Label values will be normalized before being passed to `format()` so they will be
     identical to how they appear in `id`.
     Default is `{}` (`descriptors` output will be empty).
+    EOT
+}
+
+variable "execution_class" {
+  type        = string
+  default     = null
+  description = <<-EOT
+Defines jobs execution type
     EOT
 }

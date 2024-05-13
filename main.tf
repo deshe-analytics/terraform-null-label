@@ -66,6 +66,7 @@ locals {
 
     descriptor_formats = merge(lookup(var.context, "descriptor_formats", {}), var.descriptor_formats)
     labels_as_tags     = local.context_labels_as_tags_is_unset ? var.labels_as_tags : var.context.labels_as_tags
+    execution_class = var.context.execution_class
   }
 
 
